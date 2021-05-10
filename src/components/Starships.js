@@ -2,7 +2,6 @@ import React from 'react';
 import { Card } from 'semantic-ui-react';
 
 export default function Starships({ data }) {
-   
     return (
         <div>
           <div className='cards'>
@@ -28,6 +27,7 @@ export default function Starships({ data }) {
                                         {ship.manufacturer}
                                         </div>
                                     </li>
+
                                     <li>
                                         <strong>MGLT:</strong> 
                                         <div>

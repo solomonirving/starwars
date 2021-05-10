@@ -12,10 +12,10 @@ import Vehicles from './components/Vehicles'
 
 function App() {
 const [starships, setStarships] = useState([]);
-const [vehicles, setVehicles] = useState([])
+const [vehicles, setVehicles] = useState([]);
 const [loading, setLoading] = useState(true);
 
-//STARSHIPS
+  //STARSHIPS
 useEffect(() => {
   async function fetchStarships() {
       let baseUrl = `https://swapi.dev/api/starships/?format=json&page=`;
@@ -28,24 +28,19 @@ useEffect(() => {
           const data = await resp.json();
           lastResult = data;
           data.results.forEach(spaceship => {
-            const { name, model, manufacturer, MGLT, max_atmosphering_speed, length }= spaceship;
-            ships.push({ name, model, manufacturer, MGLT, max_atmosphering_speed, length });
+            const { name, model, manufacturer, MGLT, max_atmosphering_speed, length, films }= spaceship;
+            ships.push({ name, model, manufacturer, MGLT, max_atmosphering_speed, length, films });
           });
           page++;
         } catch (err) {
           console.error(`Oops, something is wrong ${err}`);
         }
       } while (lastResult.next !== null);
-
       setStarships(ships)
+      setLoading(false)
   }
-  fetchStarships()
-  setLoading(false)
-}, [])
 
-
-//VEHICLES
-useEffect(() => {
+  //VEHICLES
   async function fetchVechicles() {
       let baseUrl = `https://swapi.dev/api/vehicles/?format=json&page=`;
       let page = 1;
@@ -65,11 +60,11 @@ useEffect(() => {
           console.error(`Oops, something is wrong ${err}`);
         }
       } while (lastResult.next !== null);
-
       setVehicles(vehicle)
+      setLoading(false)
   }
+  fetchStarships()
   fetchVechicles()
-  setLoading(false)
 }, [])
 
 return (
