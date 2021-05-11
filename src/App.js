@@ -12,7 +12,7 @@ import Vehicles from './components/Vehicles'
 
 function App() {
 const [starships, setStarships] = useState([]);
-const [vehicles, setVehicles] = useState();
+const [vehicles, setVehicles] = useState([]);
 const [loading, setLoading] = useState(true);
 
   //STARSHIPS
