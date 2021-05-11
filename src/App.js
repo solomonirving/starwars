@@ -12,7 +12,7 @@ import Vehicles from './components/Vehicles'
 
 function App() {
 const [starships, setStarships] = useState([]);
-const [vehicles, setVehicles] = useState([]);
+const [vehicles, setVehicles] = useState();
 const [loading, setLoading] = useState(true);
 
   //STARSHIPS
@@ -28,8 +28,8 @@ useEffect(() => {
           const data = await resp.json();
           lastResult = data;
           data.results.forEach(spaceship => {
-            const { name, model, manufacturer, MGLT, max_atmosphering_speed, length, films }= spaceship;
-            ships.push({ name, model, manufacturer, MGLT, max_atmosphering_speed, length, films });
+            const { name, model, manufacturer, MGLT, max_atmosphering_speed, length }= spaceship;
+            ships.push({ name, model, manufacturer, MGLT, max_atmosphering_speed, length });
           });
           page++;
         } catch (err) {
