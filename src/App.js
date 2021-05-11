@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Container, Dimmer, Loader } from 'semantic-ui-react';
 import './App.css';
-import Header from './components/Header'
-import Navbar from './components/Navbar'
-import Home from './components/Home'
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 import Starships from './components/Starships';
-import Vehicles from './components/Vehicles'
+import Vehicles from './components/Vehicles';
 
 
 function App() {
