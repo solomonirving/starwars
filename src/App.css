@@ -11,8 +11,12 @@ body {
 }
 
 .home{
-  background: url("./img/millennium_falcon_blast_off.jpeg") no-repeat center top;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  background: center top;
   height: 450px;
+  /* width: 300px; */
   overflow: hidden;
 }
 
